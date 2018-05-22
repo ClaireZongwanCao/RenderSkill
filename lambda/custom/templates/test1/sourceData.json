@@ -1,0 +1,33 @@
+{
+    "bodyTemplate1Data": {
+        "type": "object",
+        "objectId": "bt1Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://s3.amazonaws.com/allrecipes-stock-images/00_Bg_AllRecipes.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://s3.amazonaws.com/allrecipes-stock-images/00_Bg_AllRecipes.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "My Title Text",
+        "textContent": {
+            "primaryText": {
+                "type": "PlainText",
+                "text": "This is a bit of text in the normal font that might wrap once or twice."
+            }
+        },
+        "logoUrl": "images/APP_ICON.png"
+    }
+}

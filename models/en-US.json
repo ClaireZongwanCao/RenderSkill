@@ -88,14 +88,31 @@
                     "values": [
                         {
                             "name": {
-                                "value": "test template one",
-                                "synonyms" : ["template one"]
+                                "value": "test 3",
+                                "synonyms": [
+                                    "test template 3",
+                                    "template 3"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "test template two",
-                                "synonyms" : ["template two"]
+                                "value": "test 1",
+                                "synonyms": [
+                                    "test template 1",
+                                    "template 1",
+                                    "karaoke template"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "test 2",
+                                "synonyms": [
+                                    "test template 2",
+                                    "template 2",
+                                    "entity details template"
+                                ]
                             }
                         }
                     ]

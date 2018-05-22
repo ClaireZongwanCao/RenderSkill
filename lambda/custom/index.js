@@ -1,4 +1,6 @@
 const Alexa = require('ask-sdk-core');
+const FuzzyMatching = require('fuzzy-matching');
+const Speech = require('./speech.json');
 
 /******** UI Prompts ********/
 const WELCOME_MESSAGE = 'Welcome to APML cook book skill. Which template would you like me to display?';
@@ -29,10 +31,12 @@ const DisplayIntentHandler = {
   },
   handle(handlerInput) {
     console.log(JSON.stringify(handlerInput.requestEnvelope.request));
-    // const template = handlerInput.requestEnvelope.request.intent.slots.template.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    const templatesMatchingPool = new FuzzyMatching(Object.keys(Speech));
+    const template = handlerInput.requestEnvelope.request.intent.slots.template.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    const matchedTemplate = templatesMatchingPool.get(template);
     let response = handlerInput.responseBuilder
-        .speak(RENDER_PROMPT)
-        .reprompt(RENDER_REPROMPT)
+        .speak(Speech[matchedTemplate])
+        .reprompt(Speech[matchedTemplate])
         .getResponse();
 
     // TODO: Add template json into response directives

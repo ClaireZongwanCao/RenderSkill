@@ -1,0 +1,7 @@
+{
+    "templateName" : {
+        "value" : "test 1",
+        "synonyms" : ["test template 1", "template 1", "karaoke template"]
+    },
+    "description" : "This is an example for karaoke"
+}

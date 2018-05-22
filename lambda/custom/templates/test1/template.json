@@ -1,0 +1,188 @@
+{
+    "type": "APML",
+    "version": "0.2",
+    "theme": "auto",
+    "templates": {
+        "OneLineHeader": {
+            "parameters": [
+                "backButton",
+                "title",
+                "logo"
+            ],
+            "item": [
+                {
+                    "when": "${screen.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "row",
+                    "width": "100%",
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "items": {
+                        "type": "Image",
+                        "source": "${logo}",
+                        "height": 48,
+                        "width": 48,
+                        "scale": "best-fit"
+                    }
+                },
+                {
+                    "type": "Container",
+                    "direction": "row",
+                    "width": "100%",
+                    "alignItems": "center",
+                    "justifyContent": "spaceBetween",
+                    "paddingRight": 72,
+                    "items": [
+                        {
+                            "type": "Text",
+                            "text": "${title}",
+                            "style": "textStyleSecondary",
+                            "paddingLeft": 72
+                        },
+                        {
+                            "type": "Image",
+                            "source": "${logo}",
+                            "height": 60,
+                            "width": 60,
+                            "scale": "best-fit"
+                        }
+                    ]
+                }
+            ]
+        },
+        "MultiLineHeader": {
+            "parameters": [
+                "backButton",
+                "title",
+                "logo"
+            ],
+            "item": [
+                {
+                    "when": "${screen.shape == 'round'}",
+                    "type": "Container",
+                    "direction": "column",
+                    "width": "100%",
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${logo}",
+                            "height": 48,
+                            "width": 48,
+                            "scale": "best-fit"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "${title}",
+                            "style": "textStyleSecondary",
+                            "align": "center",
+                            "maxLines": 2
+                        }
+                    ]
+                },
+                {
+                    "type": "OneLineHeader",
+                    "title": "${title}",
+                    "logo": "${logo}"
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "description": "********* Full-screen background image **********",
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "when": "${screen.shape == 'round'}",
+                "type": "Container",
+                "direction": "column",
+                "paddingLeft": 50,
+                "paddingRight": 30,
+                "width": "100%",
+                "height": "100%",
+                "paddingTop": 10,
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                        "position": "absolute",
+                        "width": "100%",
+                        "height": "100%",
+                        "scale": "best-fill"
+                    },
+                    {
+                        "type": "MultiLineHeader",
+                        "title": "${payload.bodyTemplate1Data.title}",
+                        "logo": "${payload.logoUrl}"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                        "size": "textSizeBody",
+                        "spacing": "spacingSmall",
+                        "style": "textStyleBody1"
+                    }
+                ]
+            },
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "alignItems": "center",
+                "items": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.bodyTemplate1Data.backgroundImage.sources[0].url}",
+                        "position": "absolute",
+                        "width": "100%",
+                        "height": "100%",
+                        "scale": "best-fill"
+                    },
+                    {
+                        "type": "Container",
+                        "height": "100%",
+                        "width": "100%",
+                        "paddingLeft": "marginLeft",
+                        "paddingRight": "marginRight",
+                        "paddingTop": "marginTop",
+                        "paddingBottom": "marginBottom",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "height": 100,
+                                "width": "100%",
+                                "direction": "row",
+                                "alignItems": "center",
+                                "justifyContent": "spaceBetween",
+                                "items": [
+                                    {
+                                        "type": "Text",
+                                        "text": "${payload.bodyTemplate1Data.title}",
+                                        "style": "textStylePrimary1"
+                                    },
+                                    {
+                                        "type": "Image",
+                                        "source": "${payload.bodyTemplate1Data.logoUrl}",
+                                        "height": 60,
+                                        "width": 60,
+                                        "scale": "best-fit"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "size": "textSizeBody",
+                                "spacing": "spacingSmall",
+                                "style": "textStyleBody1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
